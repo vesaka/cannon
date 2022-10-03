@@ -1,0 +1,434 @@
+{
+    "debug": true,
+    "fps": 60,
+    "assetsBaseUrl": "/assets/cannon/",
+    "locale": "en",
+    "defaultLocale": "en",
+    "locales": ["en", "bg"],
+    "app": {
+        "backgroundColor": "#001100",
+        "antialias": true,
+        "autoResize": true
+    },
+    "renderer": {
+        "autoResize": true
+    },
+    "world": {
+        "offset": 10,
+        "size": {
+            "width": 800,
+            "height": 600
+        },
+        "gravity": {
+            "x": 0,
+            "y": 1,
+            "scale": 0.001
+        }
+    },
+    "engine": {
+        "world": {
+            
+        },
+        "gravity": {
+            "x": 0,
+            "y": 1,
+            "scale": 0.001
+        },
+        "pairs": {
+        },
+        "detector": {}
+    },
+    "game": {
+    },
+    "character": {
+        "bunny": "character/bunny.png",
+        "svg": "character/bunny.svg"
+    },
+    "view": {
+        "style": {
+            "display": "flex",
+            "top": 0,
+            "left": 0,
+            "right": 0
+        }
+    },
+    "models": {
+        "ground": {
+            "offset": 50,
+            "strength": 100,
+            "size": {
+                "width": 0.85,
+                "height": 0.1
+            },
+            "position": null,
+            "bricks": {
+                "rows": 4,
+                "columns": 20
+            },
+            "matter": {
+                "isSensor": true
+            }
+        },
+        "brick": {
+            "strength": 1,
+            "matter": {
+                "isStatic": true,
+                "isSleeping": true,
+                "mass": 1
+            }
+        },
+        "cannon": {
+            "speed": 15,
+            "position": null,
+            "score": 0,
+            "scores": {
+                "above": 3,
+                "left": 2,
+                "right": 2,
+                "bellow": 1
+            },
+            "vertices": [
+                [0.4 , 0], [0.6, 0],[0.6, 0.5],
+                [1, 0.5], [1, 1], [0, 1],
+                [0, 0.5], [0.4, 0.5], [0.4, 0]
+            ],
+            "matter": {
+                "isStatic": true,
+                "mass": 0,
+                "frictionStatic": 0,
+                "inertia": 0
+            },
+            "size": {
+                "width": 64,
+                "height": 48
+            }
+        },
+        "projectiles": {
+            "default": {
+                "damage": 10,
+                "force": 5,
+                "max": 1,
+                "state": "loading",
+                "score": 10,
+                "size": {
+                    "width": 5,
+                    "height": 5
+                },
+                "circle": {
+                    "radius": 5
+                },
+                "style": {
+                    "visible": false
+                },
+                "matter": {
+                    "isStatic": true,
+                    "isSleeping": true,
+                    "density": 0.5
+                }
+            },
+            "types": {
+                "bullet": {
+                    "max": 10,
+                    "radius": 3,
+                    "speed": 100,
+                    "matter": {
+                        "isStatic": true,
+                        "isSleeping": true,
+                        "density": 0.9
+                    }
+                },
+                "bomb": {
+                    "max": 0,
+                    "radius": 15 
+                },
+                "beam": {
+                    "max": 0,
+                    "size": {
+                        "width": 5,
+                        "height": 5
+                    }
+                }
+            }
+        },
+        "droplets": {
+            "offset": 5,
+            "limit": 3,
+            "placement": {
+                "rows": 2,
+                "columns": 6,
+                "x": [
+                    0.1,
+                    0.9
+                ],
+                "y": [
+                    -0.1,
+                    -0.2
+                ]
+            },
+            "default": {
+                "max": 1,
+                "odd": 0.5,
+                "score": 10,
+                "position": null,
+                "size": null,
+                "style": {
+                    "fill": {
+                        "color": "#F9F9F0",
+                        "opacity": 0.1
+                    },
+                    "line": {
+                        "width": 2,
+                        "color": "#11FA93"
+                    }
+                },
+                "matter": {
+                    "isStatic": true,
+                    "isSleeping": false,
+                    "friction": 0.9, 
+                    "frictionAir": [
+                        0.01,
+                        0.04
+                    ],
+                    "mass": 5,
+                    "restitution": 0.9,
+                    "density": 0.0001
+                }
+            },
+            "types": {
+                "circle": {
+                    "max": 1,
+                    "radius": [
+                        25,
+                        50
+                    ]
+                },
+                "rect": {
+                    "max": 1,
+                    "size": [
+                        50,
+                        100
+                    ],
+                    "odd": 0.65,
+                    "rounded": 10
+                },
+                "polygon": {
+                    "max": 0,
+                    "angle": [
+                        0,
+                        90
+                    ],
+                    "edges": [
+                        5,
+                        9
+                    ],
+                    "odd": 0.25,
+                    "radius": [
+                        45,
+                        70
+                    ]
+                },
+                "rock": {
+                    "max": 2,
+                    "grid": [
+                        3,
+                        4
+                    ],
+                    "range": [
+                        50,
+                        80
+                    ]
+                },
+                "star": {
+                    "max": 2,
+                    "radius": [
+                        15,
+                        25
+                    ],
+                    "beams": [
+                        5,
+                        7
+                    ],
+                    "depth": 2
+                }
+            }
+        }
+    },
+    "ui": {
+        "style": {
+            "fontFamily": "LuckiestGuy",
+            "fontSize": 22,
+            "fill": "#FFFFFF",
+            "dropShadow": true,
+            "dropShadowAlpha": 0.6,
+            "dropShadowAngle": 1.4,
+            "dropShadowBlur": 3,
+            "letterSpacing": 3
+        },
+        "progress": {
+            "background": {
+                "fill": "#001133"
+            },
+            "position": {
+                "y": 300
+            },
+            "size": {
+                "width": 400,
+                "height": 30,
+                "radius": 50,
+                "border": 5
+            },
+            "outer": {
+                "fill": "#553133"
+            },
+            "inner": {
+                "fill": "#001133"
+            }
+        },
+        "score": {
+            "size": {
+                "width": 0.4,
+                "height": 0.1
+            },
+            "position": {
+                "x": 0.7,
+                "y": 0.02
+            },
+            "counter": {
+                "style": {
+                    "fill": "#FF2222",
+                    "align": "right"
+                }
+            },
+            "label": {
+                "style": {
+                    "fill": "#FFAAAA",
+                    "align": "left"
+                }
+            }
+        },
+        "popup_points": {
+            "duration": 2000,
+            "matrix": {
+                "rows": 7,
+                "columns": 10
+            },
+            "style": {
+                "fill": "#FF2222",
+                "align": "center",
+                "fontSize": 24
+            }
+        },
+        "nav": {
+            "position": {
+                "x": 0.05,
+                "y": 0.02
+            },
+            "size": {
+                "width": 0.25,
+                "height": 0.05
+            },
+            "default": {
+                "scale": 0.3,
+                "position": {
+                    "x": 0.05,
+                    "y": 0.02
+                },
+                "size": {
+                    "width": 0.05,
+                    "height": 0.05
+                }
+            },
+            "buttons": {
+                "fullscreen": {
+                    "position": {
+                        "x": 0.05,
+                        "y": 0.02
+                    }
+                },
+                "sound": {
+                    "position": {
+                        "x": 0.16,
+                        "y": 0.02
+                    }
+                }
+            }
+        },
+        "banner": {
+            "splitAt": 0.7,
+            "animation": 2000,
+            "vertical": true,
+            "width": 800,
+            "height": 600,
+            "textures": [
+                {
+                    "frame": {
+                        "x": 0,
+                        "y": 0,
+                        "width": 600,
+                        "height": 480
+                    }
+                },
+                {
+                    "frame": {
+                        "x": 0,
+                        "y": 480,
+                        "width": 600,
+                        "height": 30
+                    }
+                }
+            ],
+            "animations": {
+                
+            }
+        },
+        "screens": {
+            "default": {
+                "animate":{
+                    "duration": 500,
+                    "end": 0.7,
+                    "bounces": 3
+                },
+                "heading": {
+                    "align": "center",
+                    "fontSize": 32,
+                    "position": [0.5, 0.1]
+                },
+                "size": {
+                    "width": 0.8,
+                    "height": 0.8
+                },
+                "position": {},
+                "transition": {}
+            },
+            "game_end": {
+                "styles": {
+                    "fontSize": 32,
+                    "align": "center"
+                },
+                "buttons": {
+                    "restart": {
+                        "position": [0.5, 0.7],
+                        "size": [0.5, 0.15]
+                    }
+                }
+            },
+            "game_start": {
+                "at": {
+                    "x": 0,
+                    "y": -1
+                },
+                "styles": {
+                    "fontSize": 32,
+                    "align": "center"
+                },
+                "buttons": {
+                    "start": {
+                        "position": [0.5, 0.7],
+                        "size": [0.5, 0.15]
+                    }
+                }
+            }
+        }
+        
+    }
+}

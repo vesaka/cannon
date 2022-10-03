@@ -1,0 +1,16 @@
+{
+    "locale": {
+        "en": "i18n/en.json"
+    },
+    "fullscreen": {
+        "off": "ui/fullscreen.png",
+        "on": "ui/smallscreen.png"
+    },
+    "sound": {
+        "off": "ui/sound-off.png",
+        "on": "ui/sound-on.png"
+    },
+    "banner": {
+        "splash": "ui/banner.jpg"
+    }
+}

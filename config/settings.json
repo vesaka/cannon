@@ -1,0 +1,92 @@
+{
+    "audio": "off",
+    "locale": "en",
+    "dificulty": "normal",
+    "dificulties": {
+        "easy": {
+            "cannon": {
+                "speed": 15,
+                "size": {
+                    "width": 64,
+                    "height": 48
+                }
+            },
+            "projectiles": {}
+        },
+        "normal": {
+            "cannon": {
+                "speed": 15,
+                "size": {
+                    "width": 64,
+                    "height": 48
+                }
+            }
+        },
+        "hard": {
+            "cannon": {
+                "speed": 12,
+                "size": {
+                    "width": 64,
+                    "height": 48
+                }
+            }
+        },
+        "insane": {
+            "cannon": {
+                "speed": 12,
+                "size": {
+                    "width": 48,
+                    "height": 36
+                }
+            }
+        },
+        "sadistic": {
+            "cannon": {
+                "speed": 10,
+                "size": {
+                    "width": 48,
+                    "height": 36
+                }
+            },
+            "projectiles": {
+                "default": {
+                    "damage": 5,
+                    "circle": {
+                        "radius": 5
+                    }
+                },
+                "types": {
+                    "bullets": {
+                        "max": 3,
+                        "radius": 2,
+                        "speed": 50,
+                        "matter": {
+                            "density": 0.5
+                        }
+                    }
+                },
+                "matter": {
+                    "density": 1
+                }
+            },
+            "droplets": {
+                "default": {
+                    "limit": 10,
+                    "default": {
+                        "max": 3,
+                        "odd": 0.7
+                    },
+                    "matter": {
+                        "friction": 0.7, 
+                        "mass": 10,
+                        "restitution": 0.6,
+                        "density": 0.001
+                    }
+                }
+            },
+            "brick": {
+                "strength": 1
+            }
+        }
+    }
+}
