@@ -1,7 +1,7 @@
 import Button from './button';
 import Toggle from './toggle';
 import { Container, Text, Texture, Sprite } from 'pixi.js';
-import toggleFullscreen from '$lib/game/utils/fullscreen';
+import { toggleFullscreen } from '$core/utils/fullscreen';
 
 class Fullscreen extends Toggle {
     constructor(options) {

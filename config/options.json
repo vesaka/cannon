@@ -1,10 +1,13 @@
 {
     "debug": true,
     "fps": 60,
-    "assetsBaseUrl": "/assets/cannon/",
+    "assetsBaseUrl": "/assets/",
     "locale": "en",
     "defaultLocale": "en",
     "locales": ["en", "bg"],
+    "fonts": {
+        "lucky": "/assets/fonts/LuckiestGuy.ttf"
+    },
     "app": {
         "backgroundColor": "#001100",
         "antialias": true,

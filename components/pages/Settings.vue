@@ -1,9 +1,7 @@
 <template>
     <div >
         <tabs refs="tabs" class="flex w-full text-blue-600">
-            <tab title="System" :class="tabClass">
-                <SystemSettings/>
-            </tab>
+
             <tab title="Screen" :class="tabClass">
                 Screen Settings
             </tab>
@@ -14,8 +12,7 @@
     </div>
 </template>
 <script>
-    import {Tabs, Tab} from '$lib/game/core/components/common/tabs/NavTabs';
-    import SystemSettings from '../components/settings/System';
+    import {Tabs, Tab} from '$core/components/common/tabs/NavTabs';
     export default {
             data() {
                 return {

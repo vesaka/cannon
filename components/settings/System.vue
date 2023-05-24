@@ -37,10 +37,10 @@
     </panel>
 </template>
 <script>
-    import Toggle from '$lib/game/core/components/common/controls/Toggle';
-    import RadioGroup from '$lib/game/core/components/common/controls/RadioGroup';
-    import Range from '$lib/game/core/components/common/controls/MinMaxRange';
-    import SettingsMixin from '$lib/game/core/components/mixins/settings-mixin';
+    import Toggle from '$core/components/common/controls/Toggle';
+    import RadioGroup from '$core/components/common/controls/RadioGroup';
+    import Range from '$core/components/common/controls/MinMaxRange';
+    import SettingsMixin from '$core/components/mixins/settings-mixin';
     import Panel from './Panel';
     import FormGroup from './FormGroup';
     import { deepMerge, deepGet, deepSet, raw } from '$lib/game/utils/object';
