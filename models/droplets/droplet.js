@@ -1,6 +1,7 @@
 import Model from '$lib/game/core/2d/models/matter-model';
 import { Graphics, Point } from 'pixi.js';
 import { Body, Events, Query, Bounds } from 'matter-js';
+import { between } from '$core/utils/math';
 
 const ABOVE = 'above';
 const LEFT = 'left';
@@ -65,8 +66,8 @@ class Droplet extends Model {
         const {body, model} = this;
         Body.setStatic(body, false);
         Body.setPosition(body, {
-            x: Math.between(cell.x[0], cell.x[1]),
-            y: Math.between(cell.y[0], cell.y[1])
+            x: between(cell.x[0], cell.x[1]),
+            y: between(cell.y[0], cell.y[1])
         });
         Body.setAngle(body, 0);
 

@@ -1,30 +1,37 @@
 <template>
     <div>
-        <div ref="container" class="flex relative inset-0 w-full h-full justify-center items-center"></div>
+        <div ref="container" class="flex relative w-full h-screen justify-center items-center origin-centero"></div>
     </div>
 </template>
-<script>
+<script setup>
+    import { ref, onMounted, onBeforeUnmount } from 'vue';
     import CannonGame from '$cn/cannon';
-    import PixiMixin from '$core/2d/mixins/pixi-mixin';
     import options from '$cn/config/options.json';
     import settings from '$cn/config/settings.json';
     import assets from '$cn/config/assets.json';
     import { useGameStore } from '$cn/bootstrap/stores';
-    export default {
-        mixins: [PixiMixin],     
-        mounted() { 
-            const {container} = this;
-            this.game = new CannonGame({
-                container,
-                options, 
-                settings,
-                assets,
-                $store: useGameStore() });
-            this.game.load();
-        },
-        beforeUnmount() {
-            this.game.destroy();
-            this.game = null;
+
+    const container = ref(null);
+    let game = null;
+
+    onMounted(() => {
+        game = new CannonGame({
+                container: container.value,
+                options, settings, assets,
+                $store: useGameStore() 
+        });
+
+        game.load();
+    });
+
+    onBeforeUnmount(() => {
+        if (game) {
+            game.destroy();
+            game = null;
         }
-    }
+        
+    });
+
+
+
 </script>

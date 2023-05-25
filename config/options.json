@@ -5,9 +5,7 @@
     "locale": "en",
     "defaultLocale": "en",
     "locales": ["en", "bg"],
-    "fonts": {
-        "lucky": "/assets/fonts/LuckiestGuy.ttf"
-    },
+    "fonts": ["LuckiestGuy"],
     "app": {
         "backgroundColor": "#001100",
         "antialias": true,

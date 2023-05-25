@@ -3,7 +3,7 @@ import { Graphics, Sprite, Texture } from 'pixi.js';
 import { Body, Bodies, Bounds, Sleeping } from 'matter-js';
 import Brick from './brick';
 import StatesMixin from '$lib/game/core/mixins/states-mixin';
-import Matrix from '$lib/game/core/2d/utils/matrix';
+import Matrix from '$core/2d/grids/matrix';
 class Ground extends Model {
 
     constructor(options) {

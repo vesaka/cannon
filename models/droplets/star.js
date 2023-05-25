@@ -1,7 +1,7 @@
 import Droplet from './droplet';
 import { Graphics } from 'pixi.js';
 import { Body, Bodies, Common } from 'matter-js';
-
+import { between, radians } from '$core/utils/math';
 
 class Star extends Droplet {
     constructor(options) {
@@ -20,11 +20,11 @@ class Star extends Droplet {
     }
     
     filter_radius(radius) {
-        return Math.round(Math.between(radius[0], radius[1]));
+        return Math.round(between(radius[0], radius[1]));
     }
     
     filter_beams(beams) {
-        return Math.round(Math.between(beams[0], beams[1]));
+        return Math.round(between(beams[0], beams[1]));
     }
 
     getPoints() {
@@ -37,8 +37,8 @@ class Star extends Droplet {
             for (let i = 1, c = 0; i <= 360; i += div, c++) {
                 const radius = (c % 2) !== 0 ? this.radius : (this.radius * depth);
                 points.push({
-                    x: this.radius + Math.round((Math.cos(Math.radians(i - 90 + angle)) * radius), 2),
-                    y: this.radius + Math.round((Math.sin(Math.radians(i - 90 + angle)) * radius), 2)
+                    x: this.radius + Math.round((Math.cos(radians(i - 90 + angle)) * radius), 2),
+                    y: this.radius + Math.round((Math.sin(radians(i - 90 + angle)) * radius), 2)
                 });
             }
             points.push(points[0]);

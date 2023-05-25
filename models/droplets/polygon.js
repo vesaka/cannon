@@ -1,6 +1,7 @@
 import Droplet from './droplet';
 import { Graphics } from 'pixi.js';
 import { Body, Bodies } from 'matter-js';
+import { between } from '$core/utils/math';
 
 class Polygon extends Droplet {
     constructor(options) {
@@ -11,16 +12,16 @@ class Polygon extends Droplet {
     }
     
     filter_edges(edges) {
-        return Math.round(Math.between(edges[0], edges[1]));
+        return Math.round(between(edges[0], edges[1]));
     }
 
     drawShape(droplet) {
         const {position, radius, edges, angle} = this;
 
-        const R = Math.round(Math.between(radius[0], radius[1]));
+        const R = Math.round(between(radius[0], radius[1]));
         this.points = [];
         let step = (Math.PI * 2) / edges;
-        let start = (Math.round(Math.between(angle[0], angle[1]) / 180)) * Math.PI;
+        let start = (Math.round(between(angle[0], angle[1]) / 180)) * Math.PI;
         let n, dx, dy;
 
         for (n = 0; n <= edges; n++) {

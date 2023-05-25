@@ -1,13 +1,14 @@
 import Model from '$lib/game/core/2d/models/matter-model';
 import { Graphics, Sprite, Texture } from 'pixi.js';
 import { Body, Bodies } from 'matter-js';
+import { between } from '$core/utils/math';
 
 class Bunny extends Model {
     constructor(options, index) {
         options.index = index;
         super(options);
 
-        //this.scale = Math.between(min, max);
+        //this.scale = between(min, max);
         return this;
     }
 
@@ -30,11 +31,11 @@ class Bunny extends Model {
 
 return {
             x: this.index * 30,
-            y: Math.between(options.world.offset*2, options.world.offset*4)
+            y: between(options.world.offset*2, options.world.offset*4)
         };
         return {
-            x: Math.between(options.world.offset, app.screen.width - options.world.offset),
-            y: Math.between(options.world.offset*2, options.world.offset*4)
+            x: between(options.world.offset, app.screen.width - options.world.offset),
+            y: between(options.world.offset*2, options.world.offset*4)
         };
     }
 

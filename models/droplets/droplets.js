@@ -10,6 +10,7 @@ import Grid from '$lib/game/core/2d/utils/grid';
 
 import { Query, Events, Bounds } from 'matter-js'; 
 import ActionsMixin from '$lib/game/core/mixins/actions-mixin';
+import { between } from '$core/utils/math';
 const types = {
     circle: Circle,
     rect: Rect,
@@ -53,7 +54,7 @@ class Droplets extends Collection {
 //                chanse: droplet.odd
 //            });
             if (!droplet.falling && (grid.freeSlots.length > 0) && (grid.takenSlots.length < limit) && (Math.random() > droplet.odd)) {
-                const id = Math.round(Math.between(0, grid.freeSlots.length - 1));
+                const id = Math.round(between(0, grid.freeSlots.length - 1));
                 const cell = grid.getCell(id);
 
                 grid.bookSlot(id);

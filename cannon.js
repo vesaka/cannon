@@ -15,7 +15,6 @@ import NavBar from './ui/nav/bar';
 import GameStart from './ui/screens/game-start';
 /** Mixins */
 import ActionsMixin from '$core/mixins/actions-mixin';
-import {raw, extend} from '$core/utils/object';
 class CannonGame extends GameMatter {
     
     
@@ -39,7 +38,6 @@ class CannonGame extends GameMatter {
         const navBar = new NavBar(this.options.ui.nav);
         this.addLayer('screen');
         navBar.render();
-        //const banner = new Banner(this.options.ui.banner);
         this.pause = true;
         
         return this;

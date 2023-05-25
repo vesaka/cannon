@@ -1,8 +1,9 @@
 import Droplet from './droplet';
 import { Graphics } from 'pixi.js';
 import { Body, Bodies } from 'matter-js';
+import { between } from '$core/utils/math';
 
-import Matrix from '$lib/game/core/2d/utils/matrix';
+import Matrix from '$core/2d/grids/matrix';
 
 class Rock extends Droplet {
     constructor(options) {
@@ -28,10 +29,10 @@ class Rock extends Droplet {
                 }
             };
             const matrix = new Matrix({
-                rows: Math.round(Math.between(grid[0], grid[1])),
-                columns: Math.round(Math.between(grid[0], grid[1])),
-                width: Math.between(range[0], range[1]),
-                height: Math.between(range[0], range[1])
+                rows: Math.round(between(grid[0], grid[1])),
+                columns: Math.round(between(grid[0], grid[1])),
+                width: between(range[0], range[1]),
+                height: between(range[0], range[1])
             });
             const [rows, columns] = [grid.rows - 1, grid.columns - 1];
             const points = [];
@@ -43,8 +44,8 @@ class Rock extends Droplet {
                         || ((rows === x) && (0 === y))
                         || ((rows === x) && (columns === y)))) {
                     const point = {
-                        x: Math.round(Math.between(slot.ax, slot.bx)),
-                        y: Math.round(Math.between(slot.ay, slot.dy))
+                        x: Math.round(between(slot.ax, slot.bx)),
+                        y: Math.round(between(slot.ay, slot.dy))
                     };
                     
                     if (point.x < bounds.min.x) {

@@ -1,5 +1,6 @@
-import UI from '$lib/game/core/2d/display/ui';
+import UI from '$core/2d/display/ui';
 import { Container, Text } from 'pixi.js';
+import { t } from '$core/utils/i18n';
 
 class Score extends UI {
     
@@ -47,7 +48,7 @@ class Score extends UI {
     }
     
     createLabel(setup) {
-        const text = this.createText(this.$store.state.i18n.ui.score + ':', setup.style);
+        const text = this.createText(t('ui.score') + ':', setup.style);
         
         return text;
     }

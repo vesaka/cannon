@@ -1,6 +1,7 @@
 import Screen from './screen';
 import { Graphics, Text } from 'pixi.js';
-import { BounceDown } from '$lib/game/core/utils/transitions';
+import { BounceDown } from '$core/utils/transitions';
+import { t } from '$core/utils/i18n';
 class GameStart extends Screen {
     constructor(options = {}) {
         super(options);
@@ -15,7 +16,7 @@ class GameStart extends Screen {
     }
     
     createHeader() {
-        return new Text(this.i18n('ui.popups.game_start.header'), this.style);
+        return new Text(t('ui.popups.game_start.header'), this.style);
     }
     
     createStartButton() {
@@ -29,7 +30,7 @@ class GameStart extends Screen {
         button.interactive = true;
         button.buttonMode = true;
         
-        const text = new Text(this.i18n('ui.popups.game_start.play'), this.style);
+        const text = new Text(t('ui.popups.game_start.play'), this.style);
         text.position.set(button.width * 0.5, button.height * 0.5)
         text.anchor.set(0.5, 0.5);
         button.addChild(text);

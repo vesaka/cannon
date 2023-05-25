@@ -1,6 +1,7 @@
 import Droplet from './droplet';
 import { Graphics } from 'pixi.js';
 import { Body, Bodies } from 'matter-js';
+import { between } from '$core/utils/math';
 
 class Circle extends Droplet {
     constructor(options) {
@@ -10,7 +11,7 @@ class Circle extends Droplet {
     }
     
     filter_radius(radius) {
-        return Math.between(radius[0], radius[1]);
+        return between(radius[0], radius[1]);
     }
     
     drawShape(droplet) {

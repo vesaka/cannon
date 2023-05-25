@@ -2,7 +2,7 @@ import UI from '$lib/game/core/2d/display/ui';
 import { Text, Graphics } from 'pixi.js';
 
 import { curveToLine, pointInRectangle, curveToRectangle } from '$lib/game/core/2d/utils/intersections';
-import Matrix from '$lib/game/core/2d/utils/matrix';
+import Matrix from '$core/2d/grids/matrix';
 class PopupPoints extends UI {
     constructor(options) {
         super(options);
